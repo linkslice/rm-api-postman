@@ -1,0 +1,1208 @@
+{
+	"info": {
+		"_postman_id": "dddbfcaa-4f2b-4989-8175-92446cfde2a2",
+		"name": "Zenoss",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4189425"
+	},
+	"item": [
+		{
+			"name": "Get Production States",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"DeviceRouter\",\"method\":\"getProductionStates\",\"data\":[{}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/device_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"device_router"
+					]
+				},
+				"description": "First attempt to do something"
+			},
+			"response": []
+		},
+		{
+			"name": "Introspection",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"IntrospectionRouter\",\"method\":\"getAllRouters\",\"data\":[{}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/introspection_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"introspection_router"
+					]
+				},
+				"description": "List of all routers"
+			},
+			"response": []
+		},
+		{
+			"name": "Router Detail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"IntrospectionRouter\",\"method\":\"getRouterMethods\",\"data\":[{\"router\":\"CiscoUCSRouter\"}],\"type\":\"rpc\",\"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/introspection_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"introspection_router"
+					]
+				},
+				"description": "Router details"
+			},
+			"response": []
+		},
+		{
+			"name": "Job Info",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46emVub3Nz"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"JobsRouter\",\"method\":\"getInfo\",\"data\":[{\"jobid\":\"cc1c86f1-7894-4937-a7bc-83cb588cd270\"}],\"type\":\"rpc\",\"tid\":11}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/jobs_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"jobs_router"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device Search",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"DeviceRouter\",\"method\":\"getDevices\",\"data\":[{\"params\":{\"name\":\"apache1\"}, \"keys\":[\"name\", \"ipAddressString\", \"uid\"]}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/zport/dmd/device_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"zport",
+						"dmd",
+						"device_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"UsersRouter\",\"method\":\"getUsers\", \"data\":[{\"keys\":[\"name\",\"uuid\"]}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/users_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"users_router"
+					]
+				},
+				"description": "Get a list of users and (trying to get their UUID but only returning their UID"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Notifications",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"TriggersRouter\",\"method\":\"getNotifications\", \"data\":\"\", \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/triggers_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"triggers_router"
+					]
+				},
+				"description": "Get a list of the notifications\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Notifications copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"TriggersRouter\",\"method\":\"getNotifications\", \"data\":\"\", \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/triggers_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"triggers_router"
+					]
+				},
+				"description": "Get a list of the notifications\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Notifications",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"action\": \"TriggersRouter\",\n  \"method\": \"updateNotification\",\n  \"data\": [\n    {\n      \"uid\": \"/zport/dmd/NotificationSubscriptions/emailNotification\",\n      \"enabled\": true,\n      \"send_clear\": false,\n      \"send_initial_occurrence\": true,\n      \"delay_seconds\": \"0\",\n      \"repeat_seconds\": \"0\",\n      \"body_content_type\": \"html\",\n      \"subject_format\": \"[zenoss]\",\n      \"body_format\": \"\",\n      \"clear_subject_format\": \"[zenoss] CLEAR\",\n      \"clear_body_format\": \"\",\n      \"email_from\": \"username@zenoss.com\",\n      \"host\": \"jira.atlassian.com\",\n      \"port\": \"\",\n      \"useTls\": false,\n      \"user\": \"\",\n      \"password\": \"\",\n      \"notification_globalRead\": false,\n      \"notification_globalWrite\": false,\n      \"notification_globalManage\": false,\n      \"recipients\": [\n        {\n          \"type\": \"user\",\n          \"label\": \"username (User)\",\n          \"value\": \"\",\n          \"write\": false,\n          \"manage\": false\n        }\n      ],\n      \"subscriptions\": []\n    }\n  ],\n  \"type\": \"rpc\",\n  \"tid\": 1\n}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/triggers_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"triggers_router"
+					]
+				},
+				"description": "Trying to update notifications and just add a user\nnot really doing what I want yet."
+			},
+			"response": []
+		},
+		{
+			"name": "Events (layerx insight)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"EventsRouter\",\"method\":\"query\",\"data\":[{\"params\":{\"eventState\":[0,1],\"severity\":[5,4,3]}}],\"type\":\"rpc\",\"tid\":200}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/evconsole_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"evconsole_router"
+					]
+				},
+				"description": "Working with events here, still in testing."
+			},
+			"response": []
+		},
+		{
+			"name": "Get OID Mappings",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"EventsRouter\",\"method\":\"query\",\"data\":[{\"params\":{\"eventState\":[0,1],\"severity\":[5,4,3]}}],\"type\":\"rpc\",\"tid\":200}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/evconsole_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"evconsole_router"
+					]
+				},
+				"description": "Working with events here, still in testing."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Mibs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"EventsRouter\",\"method\":\"query\",\"data\":[{\"params\":{\"eventState\":[0,1],\"severity\":[5,4,3]}}],\"type\":\"rpc\",\"tid\":200}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/evconsole_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"evconsole_router"
+					]
+				},
+				"description": "Working with events here, still in testing."
+			},
+			"response": []
+		},
+		{
+			"name": "Events",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"EventsRouter\",\"method\":\"query\",\"data\":[{\"params\":{\"eventState\":[0,1],\"severity\":[5,4,3]}}],\"type\":\"rpc\",\"tid\":200}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/evconsole_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"evconsole_router"
+					]
+				},
+				"description": "Working with events here, still in testing."
+			},
+			"response": []
+		},
+		{
+			"name": "All IP addresses",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"action\":\"NetworkRouter\",\"method\":\"getInfo\",\"data\":[{\"uid\":\"/zport/dmd/Networks\",\"keys\":[\"id\",\"description\",\"ipcount\"]}],\"type\":\"rpc\",\"tid\":5},{\"action\":\"NetworkRouter\",\"method\":\"getIpAddresses\",\"data\":[{\"uid\":\"/zport/dmd/Networks\",\"page\":1,\"start\":0,\"limit\":200,\"sort\":\"name\",\"dir\":\"ASC\"}],\"type\":\"rpc\",\"tid\":6}]"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/network_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"network_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Components",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"DeviceRouter\",\"method\":\"getComponents\",\"data\":[{\"uid\":\"/zport/dmd/Devices/Server/SSH/Linux/devices/apache1.zenoss.loc\", \"keys\":[\"name\"], \"start\":0, \"limit\":150}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/device_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"device_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Component info",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "33FKsxcE4MWI2MzVkYTc3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"DeviceRouter\",\"method\":\"getComponents\",\"data\":[{\"uid\":\"/zport/dmd/Devices/vSphere/devices/vxchnge-vcenter-02\", \"meta_type\":\"EC2Instance\", \"keys\":[\"name\"]}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/device_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"device_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "Introspection copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"IntrospectionRouter\",\"method\":\"getAllRouters\",\"data\":[{}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/introspection_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"introspection_router"
+					]
+				},
+				"description": "List of all routers"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateDataSource",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"action\":\"TemplateRouter\",\"method\":\"setInfo\",\"data\":[{\"uid\":\"/zport/dmd/Devices/Server/SSH/Linux/devices/apache1.zenoss.loc/HttpMonitor/datasources/HttpMonitor\", \"enabled\":\"true\"}],\"type\":\"rpc\",\"tid\":1}]"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/template_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"template_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"UsersRouter\",\"method\":\"getUsers\", \"data\":[{\"keys\":[\"name\",\"uuid\"]}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/users_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"users_router"
+					]
+				},
+				"description": "Get a list of users and (trying to get their UUID but only returning their UID"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Device Templates",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "33FKsxcE4MWI2MzVkYTc3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"DeviceRouter\",\"method\":\"getBoundTemplates\",\"data\":[{\"uid\":\"/zport/dmd/Devices/vSphere/devices/vxchnge-vcenter-02\"}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/zport/dmd/device_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"zport",
+						"dmd",
+						"device_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Templates Details",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "33FKsxcE4MWI2MzVkYTc3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"TemplateRouter\",\"method\":\"getDataPoints\",\"data\":[{\"uid\":\"/zport/dmd/Devices/Server/SSH/Linux/devices/apache1.zenoss.loc/HttpMonitor\"}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/zport/dmd/template_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"zport",
+						"dmd",
+						"template_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "Add Device",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46emVub3Nz"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"DeviceRouter\",\"method\":\"addDevice\",\"data\":[{\"deviceName\":\"apache1.zenoss.loc\",\"deviceClass\":\"/Server/SSH/Linux\",\"model\":\"True\",\"zCommandUsername\":\"root\",\"zCommandPassword\":\"Zenoss123\",\"collector\":\"localhost\"}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/zport/dmd/device_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"zport",
+						"dmd",
+						"device_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Process List",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"ProcessRouter\",\"method\":\"getProcessList\",\"data\":[{\"jobid\":\"58d4acf7-ce77-4aa3-8a15-440af37cb4bb\"}],\"type\":\"rpc\",\"tid\":11}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/process_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"process_router"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event Update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"EventsRouter\",\"method\":\"updateDetails\",\"data\":[{\"evid\":\"0242ac11-000e-99a0-11e7-c4c396df1b7f\", \"detailInfo\":[\"summary\":\"random worss\"]}], \"tid\":1}\n\n"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/zport/dmd/evconsole_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"zport",
+						"dmd",
+						"evconsole_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Device Templates",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "33FKsxcE4MWI2MzVkYTc3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"DeviceRouter\",\"method\":\"getBoundTemplates\",\"data\":[{\"uid\":\"/zport/dmd/Devices/Server/Microsoft/Windows/devices/10.90.35.37/os/filesystems/C\"}], \"tid\":1}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/zport/dmd/device_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"zport",
+						"dmd",
+						"device_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "AddImpactServicePolicy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "33FKsxcE4MWI2MzVkYTc3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"ImpactRouter\",\"method\":\"removeStateTrigger\",\"data\":[{\"permissionUid\":\"/zport/dmd/DynamicServices/MDS/services/MDS\",\"contextUid\":\"global\",\"uid\":\"/zport/dmd/DynamicServices/MDS/services/MDS\",\"policyType\":\"Availability\",\"guid\":\"be163abd-5b1c-48da-8c44-178fa061df37\"}],\"type\":\"rpc\",\"tid\":117}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/zport/dmd/enterpriseservices_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"zport",
+						"dmd",
+						"enterpriseservices_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveImpactServicePolicy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "33FKsxcE4MWI2MzVkYTc3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"ImpactRouter\",\"method\":\"removeStateTrigger\",\"data\":[{\"permissionUid\":\"/zport/dmd/DynamicServices/MDS/services/MDS\",\"contextUid\":\"global\",\"uid\":\"/zport/dmd/DynamicServices/MDS/services/MDS\",\"policyType\":\"Availability\",\"guid\":\"44363e38-4e00-4827-adaa-2d314ef519bc\"}],\"type\":\"rpc\",\"tid\":117}"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/zport/dmd/enterpriseservices_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"zport",
+						"dmd",
+						"enterpriseservices_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "GetImpactServicePolicy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "33FKsxcE4MWI2MzVkYTc3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic WRtOPDgad89dfBpPadf"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"action\":\"ImpactRouter\",\"method\":\"getStateTriggers\",\"data\":[{\"uid\":\"/zport/dmd/DynamicServices/MDS/services/MDS\",\"contextUid\":\"global\",\"policyType\":\"Availability\"}],\"type\":\"rpc\",\"tid\":72},{\"action\":\"ImpactRouter\",\"method\":\"getImpactingTypes\",\"data\":[{\"uid\":\"/zport/dmd/DynamicServices/MDS/services/MDS\"}],\"type\":\"rpc\",\"tid\":73}]"
+				},
+				"url": {
+					"raw": "https://{{mylab}}/zport/dmd/zport/dmd/enterpriseservices_router",
+					"protocol": "https",
+					"host": [
+						"{{mylab}}"
+					],
+					"path": [
+						"zport",
+						"dmd",
+						"zport",
+						"dmd",
+						"enterpriseservices_router"
+					]
+				},
+				"description": "Get Devices set up as search."
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}evconsole_router",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"EventsRouter\",\"method\":\"add_event\",\"data\":[{\"summary\":\"This is a new test\",\"device\":\"bi-5-master\",\"component\":\"\",\"severity\":5,\"evclasskey\":\"test\",\"evclass\":\"/App\",\"monitor\":\"ZenossHQ-Collector\",\"Custom01\":\"Custom Data 01\"}],\"type\":\"rpc\",\"tid\":26}"
+				},
+				"url": {
+					"raw": "{{{{mylab}}}}evconsole_router",
+					"host": [
+						"{{{{mylab}}}}evconsole_router"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "mylab",
+			"value": "10.88.111.250",
+			"type": "string"
+		}
+	]
+}
